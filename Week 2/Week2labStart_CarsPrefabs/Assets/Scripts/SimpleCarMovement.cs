@@ -16,7 +16,6 @@ public class SimpleCarMovement : MonoBehaviour
     void FixedUpdate()
     {
 		Vector3 moveVector = transform.forward;
-
 		rb.velocity = moveVector * speed;
     }
 }

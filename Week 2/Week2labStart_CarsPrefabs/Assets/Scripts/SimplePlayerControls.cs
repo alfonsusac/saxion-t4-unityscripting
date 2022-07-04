@@ -15,11 +15,28 @@ public class SimplePlayerControls : MonoBehaviour
 		startPosition = transform.position;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Car"))
+        {
+            ResetPosition();
+        }
+    }
+
     void Update()
     {
-		Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        HandleInputPhysics();
+    }
 
-		transform.Translate(moveVector * speed);
+    void HandleInput()
+    {
+        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        transform.Translate(moveVector * speed);
+    }
+
+    void HandleInputPhysics()
+    {
+        rb.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speed * 100000 * Time.deltaTime);
     }
 
     void ResetPosition() {
