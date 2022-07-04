@@ -25,7 +25,7 @@ public class SimpleCarSpawner : MonoBehaviour
         if(lastSpawnedTime > 1)
         {
             lastSpawnedTime = 0;
-            Instantiate(car,transform.position,transform.rotation);
+            Object c = Instantiate(car,transform.position,transform.rotation);
         }
     }
 }
