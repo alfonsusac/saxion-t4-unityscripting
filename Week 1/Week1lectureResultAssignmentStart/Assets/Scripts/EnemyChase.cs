@@ -26,6 +26,11 @@ public class EnemyChase : MonoBehaviour
 
     void checkLoseCondition(GameObject g)
     {
-            
+        float distance = Vector3.Distance(transform.position, Player.transform.position);
+        if(distance < 1)
+        {
+            Player.GetComponent<PlayerMovement>().WalkSpeedMultiplier = 0;
+            Debug.Log("GAME OVER");
+        }
     }
 }
