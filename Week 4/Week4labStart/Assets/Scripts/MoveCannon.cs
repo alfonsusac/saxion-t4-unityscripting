@@ -6,6 +6,8 @@ public class MoveCannon : MonoBehaviour
 {
     public GameObject CannonHeadPart;
     public GameObject Player;
+    public float CannonRotationMaxSpeed = 1f;
+    public float CannonHeadRotationMaxSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,27 +20,50 @@ public class MoveCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotateWholeCannon(Player);
-        RotateHeadCanon(Player);
+        RotateCannon();
     }
 
-    void RotateWholeCannon(GameObject at)
+    public bool EasedMotion = true;
+    void RotateCannon()
     {
-        Vector3 relativePos = at.transform.position - transform.position;
-        Quaternion toPlayerRotation = Quaternion.LookRotation(relativePos, Vector3.up);
-        transform.rotation = new Quaternion(
-            x: transform.rotation.x, 
-            y: toPlayerRotation.y, 
-            z: transform.rotation.z, 
-            w: transform.rotation.w);
-    }
-    void RotateHeadCanon(GameObject at)
-    {
-        // Can be simplified using proper quaternions
-        Vector3 relativePos = at.transform.position - CannonHeadPart.transform.position;
-        Debug.DrawRay(transform.position, relativePos);
-        Quaternion toPlayerRotation = Quaternion.LookRotation(relativePos, Vector3.up);
-        CannonHeadPart.transform.rotation = toPlayerRotation;
-        CannonHeadPart.transform.Rotate(0, 0, 90);
+        // Gets the relative displacement from player to cannon
+        Vector3 relativePos = Player.transform.position - CannonHeadPart.transform.position;
+
+        // Rotate Base of Turret left to right
+        Vector3 relativePosXZPlane = new Vector3(relativePos.x, 0, relativePos.z);
+        Quaternion rotationToLookAt = Quaternion.LookRotation(relativePosXZPlane);
+        
+        // Instantly 
+        if(!EasedMotion)
+            transform.rotation = rotationToLookAt;
+        
+        // Eased
+        else
+            transform.rotation = Quaternion.Lerp(
+                a: transform.rotation, 
+                b: rotationToLookAt, 
+                t: Time.deltaTime * CannonRotationMaxSpeed
+            );
+
+        // Rotate Head of turrent up and down
+        Vector3 rotationToLookAt2 = Quaternion.LookRotation(relativePos).eulerAngles;
+
+        // Instantly 
+        if(!EasedMotion)
+            CannonHeadPart.transform.localRotation = Quaternion.Euler(
+                        x: rotationToLookAt2.x,
+                        y: 0,
+                        z: 90);
+
+        // Eased
+        else
+            CannonHeadPart.transform.localRotation = Quaternion.Lerp(
+                    a: CannonHeadPart.transform.localRotation,
+                    b: Quaternion.Euler(
+                        x: rotationToLookAt2.x,
+                        y: 0,
+                        z: 90),
+                    t: Time.deltaTime * CannonHeadRotationMaxSpeed
+            );
     }
 }
