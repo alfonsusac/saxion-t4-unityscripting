@@ -230,8 +230,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236409328}
+  - component: {fileID: 236409329}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: WholeCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,6 +255,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236409329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236409327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061826d0e1263a344a9c5a19c532ae21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CannonHeadPart: {fileID: 906840692}
+  Player: {fileID: 2105522234}
 --- !u!1 &256643125
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 256643126}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: CannonBasePart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,7 +1085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906840693}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CanonHeadPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1098,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906840692}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0.05320748, y: 0, z: 0, w: 0.9985835}
   m_LocalPosition: {x: 0, y: 1.83, z: 0}
   m_LocalScale: {x: 0.3000002, y: 0.5000001, z: 0.3}
   m_ConstrainProportionsScale: 0
@@ -1092,7 +1107,7 @@ Transform:
   - {fileID: 1590785023}
   m_Father: {fileID: 236409328}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.1, y: 0, z: 0}
 --- !u!1 &934234981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0129dcc8c1d73174d8cff77ea9da03b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  control: 1
+  control: 0
   moveSpeed: 7
   turnSpeed: 150
 --- !u!136 &2105522237
@@ -2023,7 +2038,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105522234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -3}
+  m_LocalPosition: {x: -0.09, y: 7.03, z: -11.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
