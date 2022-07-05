@@ -1484,7 +1484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee318708ecab47c4a81bc7a0f3370d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 2439178364146070203, guid: ea258ff56eb6b2f4791e6def8c53fc5d, type: 3}
+  cars:
+  - {fileID: 2439178364146070203, guid: fa0ed6cfd76bf1e4981c54dd33986a38, type: 3}
+  - {fileID: 2439178364146070203, guid: ea258ff56eb6b2f4791e6def8c53fc5d, type: 3}
 --- !u!4 &1088378218
 Transform:
   m_ObjectHideFlags: 0
@@ -1909,7 +1911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee318708ecab47c4a81bc7a0f3370d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 2439178364146070203, guid: 520824ecc90f42341badc5364620afbc, type: 3}
+  cars:
+  - {fileID: 2439178364146070203, guid: 520824ecc90f42341badc5364620afbc, type: 3}
 --- !u!4 &1564478342
 Transform:
   m_ObjectHideFlags: 0

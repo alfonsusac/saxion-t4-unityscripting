@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1477048921314056681, guid: b95ffadcf88c16742b13280cfa47f96d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2797853817603938532, guid: b95ffadcf88c16742b13280cfa47f96d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -75,6 +80,16 @@ PrefabInstance:
     - target: {fileID: 2797853818319764077, guid: b95ffadcf88c16742b13280cfa47f96d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496710889798258816, guid: b95ffadcf88c16742b13280cfa47f96d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434435915667659786, guid: b95ffadcf88c16742b13280cfa47f96d,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -4,28 +4,18 @@ using UnityEngine;
 
 public class SimpleCarSpawner : MonoBehaviour
 {
-    public Object car;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-
-
-
+    public List<Object> cars;
     float lastSpawnedTime;
 
     // Update is called once per frame
     void Update()
     {
         lastSpawnedTime += Time.deltaTime;
-        Debug.Log(lastSpawnedTime);
         if(lastSpawnedTime > 1)
         {
             lastSpawnedTime = 0;
-            Object c = Instantiate(car,transform.position,transform.rotation);
+            Debug.Log(cars.Count);
+            Object c = Instantiate(cars[Random.Range(0,cars.Count)],transform.position,transform.rotation);
         }
     }
 }
