@@ -63,7 +63,6 @@ public class Accelerate : MonoBehaviour
     void HandleTurning()
     {
         float speedfraction = rb.velocity.magnitude / (Time.deltaTime * 5000 * speed);
-        Debug.Log(speedfraction);
         float horizontalturn = speedfraction * Input.GetAxis("Horizontal") * Time.deltaTime * 500 * turnSpeed;
         transform.RotateAround(transform.position - new Vector3(0, 0, 1.5f), Vector3.up, horizontalturn);
     }
