@@ -8,7 +8,8 @@ public class MoveCannon : MonoBehaviour
 {
     public Smoothing SmoothingMethod;
     public GameObject CannonHeadPart;
-    public GameObject Player;
+    public string NameOfPlayerObject = "Player";
+    public static GameObject Player;
 
     public float CannonRotationMaxSpeed = 1f;
     public float CannonHeadRotationMaxSpeed = 1f;
@@ -16,8 +17,10 @@ public class MoveCannon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (CannonHeadPart == null) CannonHeadPart = transform.Find("CannonHeadPart").gameObject;
-        if (Player == null)         Player = transform.parent.Find("Player").gameObject;
+        if (CannonHeadPart == null) 
+            CannonHeadPart = transform.Find("CannonHeadPart").gameObject;
+        if (Player == null)
+            Player = GameObject.Find(NameOfPlayerObject);
     }
 
     // Update is called once per frame
