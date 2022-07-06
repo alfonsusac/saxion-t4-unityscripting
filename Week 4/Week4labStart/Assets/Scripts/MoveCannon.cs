@@ -14,6 +14,9 @@ public class MoveCannon : MonoBehaviour
     public float CannonRotationMaxSpeed = 1f;
     public float CannonHeadRotationMaxSpeed = 1f;
 
+    private bool playerSeen = false;
+    public bool PlayerSeen { get { return playerSeen;  } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +31,19 @@ public class MoveCannon : MonoBehaviour
     {
         Vector3 relativePositionToPlayer = GetRelativePosition();
         (GameObject objectHit, bool isPlayerVisible) = IsPlayerVisible(relativePositionToPlayer);
+        
         if (isPlayerVisible && objectHit.name == "Player")
         {
+            playerSeen = true;
             RotateCannon(relativePositionToPlayer);
         }
+        else
+        {
+            playerSeen = false;
+        }
+
+
+
     }
 
     (GameObject, bool) IsPlayerVisible(Vector3 relativePosition)

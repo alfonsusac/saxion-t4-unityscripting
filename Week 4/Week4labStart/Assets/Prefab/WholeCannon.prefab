@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2d31e25646a8d29459bd58e80e87f826, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,6 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 170118125265439707}
+  - component: {fileID: 906840694}
   m_Layer: 0
   m_Name: CanonHeadPart
   m_TagString: Untagged
@@ -131,6 +132,20 @@ Transform:
   m_Father: {fileID: 170118125400313950}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 19.88, y: 0, z: 90}
+--- !u!114 &906840694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170118125265439706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b329ff172eb8c43b4725173791aa08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannonBall: {fileID: 6999753336901324986, guid: fb3dca7012fc3c24fa644bedd71b114c,
+    type: 3}
 --- !u!1 &170118125400313921
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SmoothingMethod: 3
   CannonHeadPart: {fileID: 170118125265439706}
-  Player: {fileID: 0}
+  NameOfPlayerObject: Player
   CannonRotationMaxSpeed: 1
   CannonHeadRotationMaxSpeed: 25
 --- !u!1 &170118125412159899
@@ -276,7 +291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 52f113a16dbacea488af4ac963d4ee24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,7 +388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 977d8c08d6ec9714897de5366e7bda47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
